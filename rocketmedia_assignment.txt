@@ -1,0 +1,19 @@
+function getPair(n, ar){
+  let obj = {};
+  
+  //storing frequencies as value and key as entry in array into object obj
+  ar.forEach((item) => {
+  if(obj[item])
+    obj[item] = obj[item]+1;
+    else obj[item] = 1;
+  });
+  
+  let ans = 0;
+  for(let i in obj){
+    ans += Math.floor(obj[i]/2);
+  }
+  
+  return ans;
+}
+
+console.log(getPair(17,[1,1,1,1,2,3,3,3,3,3,3,3,4,4,4,4,4]));
